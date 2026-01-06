@@ -1,0 +1,25 @@
+name: "test report"
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - uses: dorny/test-reporter@v2
+        with:
+          artifact: test-results-${{ matrix.node-version }}
+          name: JEST Tests (Node ${{ matrix.node-version }})
+          path: "*.xml"
+          reporter: jest-junit
