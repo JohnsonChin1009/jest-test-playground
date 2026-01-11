@@ -2,6 +2,7 @@ import {
   addTwoNumbers,
   subtractTwoNumbers,
   multiplyTwoNumbers,
+  loadSecret,
 } from "../../src/core";
 
 describe("Core Unit Testing", () => {
@@ -29,6 +30,12 @@ describe("Core Unit Testing", () => {
       const b = 5;
 
       expect(multiplyTwoNumbers(a, b)).toBe(50);
+    });
+  });
+
+  describe("Load Secret Testing", () => {
+    it("should return true if env is set", () => {
+      expect(loadSecret()).toBe(true);
     });
   });
 });
