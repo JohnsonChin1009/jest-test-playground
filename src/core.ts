@@ -16,8 +16,18 @@ function multiplyTwoNumbers(x: number, y: number) {
   return x * y;
 }
 
+function divideTwoNumbers(x: number, y: number) {
+  return x / y;
+}
+
 function loadSecret() {
   return process.env.SECRET_API_KEY == null;
 }
 
-export { addTwoNumbers, subtractTwoNumbers, multiplyTwoNumbers, loadSecret };
+export {
+  addTwoNumbers,
+  subtractTwoNumbers,
+  multiplyTwoNumbers,
+  loadSecret,
+  divideTwoNumbers,
+};
