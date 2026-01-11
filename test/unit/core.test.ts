@@ -2,6 +2,7 @@ import {
   addTwoNumbers,
   subtractTwoNumbers,
   multiplyTwoNumbers,
+  divideTwoNumbers,
   loadSecret,
 } from "../../src/core";
 
@@ -14,7 +15,6 @@ describe("Core Unit Testing", () => {
       expect(addTwoNumbers(a, b)).toBe(10);
     });
   });
-
   describe("Subtract Numbers Testing", () => {
     it("should subtract two numbers correctly", () => {
       const a = 10;
@@ -36,6 +36,12 @@ describe("Core Unit Testing", () => {
   describe("Load Secret Testing", () => {
     it("should return true if env is set", () => {
       expect(loadSecret()).toBe(true);
+    });
+  });
+
+  describe("Divide Numbers Testing", () => {
+    it("should divide two numbers correctly", () => {
+      expect(divideTwoNumbers(5, 5)).toBe(1);
     });
   });
 });

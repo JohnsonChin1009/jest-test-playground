@@ -1,4 +1,4 @@
-import "dotenv";
+import "dotenv/config";
 
 function addTwoNumbers(x: number, y: number) {
   return x + y;
@@ -16,8 +16,18 @@ function multiplyTwoNumbers(x: number, y: number) {
   return x * y;
 }
 
-function loadSecret() {
-  return process.env.SECRET_API_KEY == null;
+function divideTwoNumbers(x: number, y: number) {
+  return x / y;
 }
 
-export { addTwoNumbers, subtractTwoNumbers, multiplyTwoNumbers, loadSecret };
+function loadSecret() {
+  return process.env.SECRET_API_KEY != null;
+}
+
+export {
+  addTwoNumbers,
+  subtractTwoNumbers,
+  multiplyTwoNumbers,
+  loadSecret,
+  divideTwoNumbers,
+};

@@ -31,9 +31,7 @@ jobs:
       - name: run tests
         run: npm run test:ci
         env:
-          WHITELISTED_WALLET_PRIVATE_KEY: ${{ secrets.WHITELISTED_WALLET_PRIVATE_KEY }}
-          SELLER_ENTITY_ID: ${{ secrets.SELLER_ENTITY_ID }}
-          SELLER_AGENT_WALLET_ADDRESS: ${{ secrets.SELLER_AGENT_WALLET_ADDRESS }}
+          SECRET_API_KEY: ${{ secrets.SECRET_API_KEY }}
 
       - name: uploads results
         uses: actions/upload-artifact@v4
